@@ -1,0 +1,36 @@
+	<!––
+		Paste this into your web export right before the closing body tag
+
+		--5f80-87 = sliders (gpio 0-7)
+		--5f90-97 = buttons (gpio 16-23)
+	––>
+
+
+	<div style="text-align: center;"><div style="display: inline-block; text-align: left; width:180px">
+			<input style="margin-left: 10px" id="slider00" type="range"  min="0" max="255" value="0" oninput="pico8_gpio[0]=(this.value);document.getElementById('output00').innerHTML = String(this.value)"><span style="margin-left: 10px" id="output00">0</span><br>
+			<input style="margin-left: 10px" id="slider01" type="range"  min="0" max="255" value="0" oninput="pico8_gpio[1]=(this.value);document.getElementById('output01').innerHTML = String(this.value)"><span style="margin-left: 10px" id="output01">0</span><br>
+			<input style="margin-left: 10px" id="slider02" type="range"  min="0" max="255" value="0" oninput="pico8_gpio[2]=(this.value);document.getElementById('output02').innerHTML = String(this.value)"><span style="margin-left: 10px" id="output02">0</span><br>
+			<input style="margin-left: 10px" id="slider03" type="range"  min="0" max="255" value="0" oninput="pico8_gpio[3]=(this.value);document.getElementById('output03').innerHTML = String(this.value)"><span style="margin-left: 10px" id="output03">0</span><br>
+			<input style="margin-left: 10px" id="slider04" type="range"  min="0" max="255" value="0" oninput="pico8_gpio[4]=(this.value);document.getElementById('output04').innerHTML = String(this.value)"><span style="margin-left: 10px" id="output04">0</span><br>
+			<input style="margin-left: 10px" id="slider05" type="range"  min="0" max="255" value="0" oninput="pico8_gpio[5]=(this.value);document.getElementById('output05').innerHTML = String(this.value)"><span style="margin-left: 10px" id="output05">0</span><br>
+			<input style="margin-left: 10px" id="slider06" type="range"  min="0" max="255" value="0" oninput="pico8_gpio[6]=(this.value);document.getElementById('output06').innerHTML = String(this.value)"><span style="margin-left: 10px" id="output06">0</span><br>
+			<input style="margin-left: 10px" id="slider07" type="range"  min="0" max="255" value="0" oninput="pico8_gpio[7]=(this.value);document.getElementById('output07').innerHTML = String(this.value)"><span style="margin-left: 10px" id="output07">0</span><br>
+
+	</div>
+
+	<div style="display: inline-block; text-align: left; width:180px">
+			<input style="margin-left: 10px" id="slider00" type="button" value="Button 00" onclick="if(pico8_gpio[16]==0){pico8_gpio[16]=255;document.getElementById('outputb0').innerHTML = 'True'}else{pico8_gpio[16]=0;document.getElementById('outputb0').innerHTML = 'False'}"><span style="margin-left: 10px" id="outputb0">False</span><br>
+			<input style="margin-left: 10px" id="slider01" type="button" value="Button 01" onclick="if(pico8_gpio[17]==0){pico8_gpio[17]=255;document.getElementById('outputb1').innerHTML = 'True'}else{pico8_gpio[17]=0;document.getElementById('outputb1').innerHTML = 'False'}"><span style="margin-left: 10px" id="outputb1">False</span><br>
+			<input style="margin-left: 10px" id="slider02" type="button" value="Button 02" onclick="if(pico8_gpio[18]==0){pico8_gpio[18]=255;document.getElementById('outputb2').innerHTML = 'True'}else{pico8_gpio[18]=0;document.getElementById('outputb2').innerHTML = 'False'}"><span style="margin-left: 10px" id="outputb2">False</span><br>
+			<input style="margin-left: 10px" id="slider03" type="button" value="Button 03" onclick="if(pico8_gpio[19]==0){pico8_gpio[19]=255;document.getElementById('outputb3').innerHTML = 'True'}else{pico8_gpio[19]=0;document.getElementById('outputb3').innerHTML = 'False'}"><span style="margin-left: 10px" id="outputb3">False</span><br>
+			<input style="margin-left: 10px" id="slider04" type="button" value="Button 04" onclick="if(pico8_gpio[20]==0){pico8_gpio[20]=255;document.getElementById('outputb4').innerHTML = 'True'}else{pico8_gpio[20]=0;document.getElementById('outputb4').innerHTML = 'False'}"><span style="margin-left: 10px" id="outputb4">False</span><br>
+			<input style="margin-left: 10px" id="slider05" type="button" value="Button 05" onclick="if(pico8_gpio[21]==0){pico8_gpio[21]=255;document.getElementById('outputb5').innerHTML = 'True'}else{pico8_gpio[21]=0;document.getElementById('outputb5').innerHTML = 'False'}"><span style="margin-left: 10px" id="outputb5">False</span><br>
+			<input style="margin-left: 10px" id="slider06" type="button" value="Button 06" onclick="if(pico8_gpio[22]==0){pico8_gpio[22]=255;document.getElementById('outputb6').innerHTML = 'True'}else{pico8_gpio[22]=0;document.getElementById('outputb6').innerHTML = 'False'}"><span style="margin-left: 10px" id="outputb6">False</span><br>
+			<input style="margin-left: 10px" id="slider07" type="button" value="Button 07" onclick="if(pico8_gpio[23]==0){pico8_gpio[23]=255;document.getElementById('outputb7').innerHTML = 'True'}else{pico8_gpio[23]=0;document.getElementById('outputb7').innerHTML = 'False'}"><span style="margin-left: 10px" id="outputb7">False</span><br>
+
+	</div></div>
+	
+	<script type="text/javascript">
+		//slider listener
+		var pico8_gpio = Array.apply(null, Array(128)).map(Number.prototype.valueOf,0);
+	</script>
